@@ -1,0 +1,62 @@
+
+@mixin panga ($style){
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border:$style;
+    justify-content: space-evenly;
+    flex-direction: row;
+}
+@mixin look{
+    border: 1px solid black;
+    color: rgb(63, 37, 37);
+    font-family: sans-serif;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.5);
+}
+body{
+   @include panga(none);
+}
+.header{
+   @include look();
+}
+.article{
+    @include look();
+    .button{
+       padding: 1em 1.5em;
+       cursor: pointer;
+        background-color: #fa4604;
+        border: 1px solid;
+        color: white;
+        overflow: hidden;
+        position: relative;
+       z-index: 1;
+       transition: transform all 400ms ease-in;
+       &:hover{
+           background: rgba(7, 7, 7, 0.5);
+        
+       }
+       &:active{
+           color: rebeccapurple;
+       }
+    }
+   
+}
+
+#footer{
+    @include look();
+}
+#names, th{
+    border: 1px solid black;
+    color: red;
+    width: 100%;
+    th{
+        width: 30%;
+    }
+}
